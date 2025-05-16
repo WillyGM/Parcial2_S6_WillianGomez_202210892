@@ -1,1 +1,1 @@
-# Parcial2_S6_WillianGomez_202210892
+# Parcial2_S6_Willian Andres Gomez Muñoz_202210892
