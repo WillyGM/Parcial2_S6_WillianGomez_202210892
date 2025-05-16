@@ -22,7 +22,6 @@ export class AirlineService {
         next: (airlines) => {
           const airline = airlines.find((a) => a.id === id);
           if (airline) {
-            // Asignar flights si no existe para cumplir con AirlineDetail
             if (!('flights' in airline)) {
               (airline as AirlineDetail).flights = [];
             }
