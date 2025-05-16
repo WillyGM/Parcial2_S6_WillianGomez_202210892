@@ -1,0 +1,30 @@
+<div *ngIf="airline" class="container mt-4" [style.border]="'3px solid ' + airline.identityColor" [style.borderRadius]="'10px'">
+    <h2 [style.color]="airline.identityColor">{{ airline.airlineName }}</h2>
+    <p><strong>País:</strong> {{ airline.country }}</p>
+    <p><strong>Ciudad:</strong> {{ airline.city }}</p>
+    <p><strong>Dirección:</strong> {{ airline.address }}</p>
+    <p><strong>Eslogan:</strong> {{ airline.slogan }}</p>
+  
+    <hr />
+  
+    <h3>Vuelos</h3>
+    <div class="row">
+      <div *ngFor="let flight of airline.flights" class="col-md-6 mb-3">
+        <div class="card" style="min-height: 150px;">
+          <img [src]="flight.image" class="card-img-top" alt="Imagen vuelo" style="max-height: 100px; object-fit: cover;">
+          <div class="card-body">
+            <h5 class="card-title">Vuelo: {{ flight.departureAirport }} → {{ flight.arrivalAirport }}</h5>
+            <p class="card-text">
+              <strong>Salida:</strong> {{ flight.departureCity }}, {{ flight.departureCountry }} ({{ flight.departureTime }})<br />
+              <strong>Llegada:</strong> {{ flight.arrivalCity }}, {{ flight.arrivalCountry }}<br />
+              <strong>Duración:</strong> {{ flight.flightDuration }} horas
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div *ngIf="!airline" class="text-center mt-5">
+    <p>No se encontró la aerolínea.</p>
+  </div>
