@@ -1,9 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { AirlineListComponent } from './airline-list/airline-list.component';
 import { AirlineDetailComponent } from './airline-detail/airline-detail.component';
-
-
 
 @NgModule({
   declarations: [
@@ -12,6 +11,10 @@ import { AirlineDetailComponent } from './airline-detail/airline-detail.componen
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    AirlineListComponent,
+    AirlineDetailComponent
   ]
 })
 export class AirlineModule { }

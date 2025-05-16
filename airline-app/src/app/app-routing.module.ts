@@ -3,17 +3,21 @@ import { RouterModule, Routes } from '@angular/router';
 
 import { AirlineListComponent } from './airline/airline-list/airline-list.component';
 import { AirlineDetailComponent } from './airline/airline-detail/airline-detail.component';
-import { FlightListComponent } from './flight/flight-list/flight-list.component';
-
 
 const routes: Routes = [
   { path: '', component: AirlineListComponent },
   { path: 'airline/:id', component: AirlineDetailComponent },
-  { path: 'flights/:id', component: FlightListComponent },
+  {
+    path: 'flights/:id',
+    loadComponent: () =>
+      import('./flight/flight-list/flight-list.component').then(
+        (m) => m.FlightListComponent
+      ),
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

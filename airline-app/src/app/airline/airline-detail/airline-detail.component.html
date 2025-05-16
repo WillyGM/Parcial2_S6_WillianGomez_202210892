@@ -1,9 +1,9 @@
-<div *ngIf="airline" class="container mt-4 p-4" [style.border]="'3px solid ' + airline.identityColor" [style.borderRadius]="'10px'">
-    <h2 [style.color]="airline.identityColor">{{ airline.airlineName }}</h2>
-    <p><strong>País:</strong> {{ airline.country }}</p>
-    <p><strong>Ciudad:</strong> {{ airline.city }}</p>
-    <p><strong>Dirección:</strong> {{ airline.address }}</p>
-    <p><strong>Eslogan:</strong> {{ airline.slogan }}</p>
+<div *ngIf="airline" class="container mt-4 p-4" [style.border]="'3px solid ' + airline?.identityColor" [style.borderRadius]="'10px'">
+    <h2 [style.color]="airline?.identityColor">{{ airline?.airlineName }}</h2>
+    <p><strong>País:</strong> {{ airline?.country }}</p>
+    <p><strong>Ciudad:</strong> {{ airline?.city }}</p>
+    <p><strong>Dirección:</strong> {{ airline?.address }}</p>
+    <p><strong>Eslogan:</strong> {{ airline?.slogan }}</p>
   
     <button class="btn btn-primary mt-3" (click)="verVuelos()">Ver vuelos</button>
   </div>

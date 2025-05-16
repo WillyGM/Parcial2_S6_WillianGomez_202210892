@@ -3,16 +3,19 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { FlightListComponent } from './flight/flight-list/flight-list.component';
+import { AirlineModule } from './airline/airline.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    FlightListComponent
+    AppComponent
+    // FlightListComponent eliminado de declarations
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    AirlineModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
